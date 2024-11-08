@@ -1,0 +1,159 @@
+/* Global styling */
+body {
+  font-family:serif;
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Container styling */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Header styles */
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #4a90e2;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Form styling */
+form {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+}
+
+form button {
+  background-color: #1a4b6b;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #1a4b6b;
+}
+
+form input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Resume Output styling */
+#resume-output {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+#resume-output h2 {
+  font-size: 1.6rem;
+  color: #4a90e2;
+  border-bottom: 2px solid #1a4b6b;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#resume-output h3 {
+  font-size: 1.2rem;
+  color: #1a4b6b;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#resume-output p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+#resume-output p strong {
+  font-weight: bold;
+}
+
+#resume-output ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-list li {
+  padding: 6px 10px;
+  background-color: #4a90e2;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #resume-output h2 {
+    font-size: 1.3rem;
+  }
+
+  #resume-output h3 {
+    font-size: 1.1rem;
+  }
+
+  #resume-output p, form input, form button {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic And Editable Resume Builder</title>
+  <link rel="stylesheet" href="style .css"> <!-- Optional: Link to CSS for styling -->
+</head>
+<body>
+  <div class="container">
+    <h1>Resume Builder</h1>
+    
+    <form id="resume-form">
+      <h2>Personal Information</h2>
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="text" name="phone" placeholder="Phone" />
+      <input type="text" name="address" placeholder="Address" />
+      
+      <h2>Education</h2>
+      <input type="text" name="degree" placeholder="Degree" required />
+      <input type="text" name="university" placeholder="University" required />
+      <input type="number" name="year" placeholder="Graduation Year" required />
+      
+      <h2>Work Experience</h2>
+      <input type="text" name="company" placeholder="Company" required />
+      <input type="text" name="role" placeholder="Role" required />
+      <input type="number" name="duration" placeholder="Duration (years)" required />
+      
+      <h2>Skills</h2>
+      <input type="text" name="skills" placeholder="Skills (comma-separated)" />
+      
+      <button type="submit">Generate Resume</button>
+    </form>
+    
+    <div id="resume-output"></div> <!-- Where the resume will be displayed -->
+  </div>
+  
+  <script src="script.js" defer></script> <!-- Link to your TypeScript-compiled JavaScript file -->
+</body>
+</html>
