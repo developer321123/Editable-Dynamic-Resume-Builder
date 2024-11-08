@@ -49,3 +49,42 @@ function generateResume(resume) {
         console.error("Could not find resume output container.");
     }
 }
+// Assuming `username` is available in your resume data
+const shareLink = `https://yourapp.vercel.app/${resumeData.username}`;
+
+const linkHtml = `
+  <div class="share-container">
+    <p>Share your resume:</p>
+    <a href="${shareLink}" target="_blank">${shareLink}</a>
+    <button onclick="copyToClipboard('${shareLink}')">Copy Link</button>
+  </div>
+`;
+
+// Append the share link to the resume output
+resumeOutput.innerHTML += linkHtml;
+
+// Copy-to-clipboard function
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(
+    () => alert('Link copied to clipboard!'),
+    (err) => console.error('Error copying text to clipboard', err)
+  );
+}
+// Button to trigger PDF download
+const downloadButtonHtml = `
+  <button onclick="downloadResumeAsPDF()">Download as PDF</button>
+`;
+resumeOutput.innerHTML += downloadButtonHtml;
+
+// PDF Download function
+function downloadResumeAsPDF() {
+  const element = document.getElementById('resume-output');
+  const options = {
+    filename: `${resumeData.username}_resume.pdf`,
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+  };
+
+  html2pdf().from(element).set(options).save();
+}
