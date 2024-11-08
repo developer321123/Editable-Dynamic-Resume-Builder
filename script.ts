@@ -147,4 +147,19 @@ function updateSkills(skillText: string) {
 
   generateResume(resumeData);
 }
+import { VercelRequest, VercelResponse } from '@vercel/node';
+
+export default (req: VercelRequest, res: VercelResponse) => {
+  const { username } = req.query;
+  // Fetch resume data based on `username` (from a database or in-memory storage)
+  // For demo purposes, we assume `resumeData` is fetched using `username`
+
+  const resumeData = getResumeDataByUsername(username as string); // Implement data fetching logic here
+  if (!resumeData) {
+    return res.status(404).send('Resume not found');
+  }
+
+  // Render resume page with data, here we're assuming a static HTML structure.
+  res.send(renderResumePage(resumeData));
+};
   
